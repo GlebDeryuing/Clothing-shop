@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 p {
@@ -18,8 +19,8 @@ header {
 }
 
 .logo {
-    padding: 20px 30px;
-    height: 15px;
+    padding: 13px 13px;
+    height: 20px;
     user-select: none;
 }
 
@@ -33,12 +34,11 @@ header {
     padding: 15px 30px;
     text-decoration: none;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
     transition: background-color 0.3s;
 }
 
 .main-menu a:hover {
-    background-color: #A6A6A6;
+    background-color: #009966;
 }
 
 main .catalog {
@@ -50,7 +50,7 @@ main .catalog {
 
 main .catalog .item {
     width: 22%;
-    padding: 5px;
+    padding: 10px;
     display: block;
     text-decoration: none;
     color: black;
@@ -72,11 +72,17 @@ main .catalog .item-text {
 }
 
 main .catalog .item-name {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
 main .catalog .item-cost {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-weight: 350;
+    display: inline;
+}
+
+main .catalog .item-cost-before {
+    display: inline;
+    font-size: 0.8em;
+    font-weight: 350;
+    text-decoration: line-through;
 }

@@ -45,6 +45,12 @@ main h2 {
     margin-bottom: 0;
     margin-left: 10px;
     margin-top: 30px;
+    font-weight: 350;
+    color: #565656;
+}
+
+main h2 b {
+    font-weight: 500;
 }
 
 main .container {
@@ -106,38 +112,52 @@ main .left-block {
 
 main .left-block input[type="search"] {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     width: 100%;
-    height: 1.3em;
-    border: 2px solid #565656;
+    height: 1.5em;
+    border: 0;
+    border-bottom: 1px solid #565656;
     border-radius: 0;
-    font-weight: 600;
-    outline: 0px solid #565656;
-    transition: outline 0.05s;
+    font-weight: 350;
+    outline: 0;
+    transition: border 0.05s;
+    transition: border-bottom 0.3s;
 }
 
 main .left-block input[type="search"]:focus {
     border-radius: 0;
-    outline: 2px solid #565656;
+    border: 1px solid white;
+    border-bottom: 1px solid #565656;
+    placeholder:
 }
 
-main .first-choose, main .second-choose {
+main .left-block input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+    background: url(close.svg);
+}
+
+main .first-choose,
+main .second-choose {
     margin-top: 30px;
+    color: #565656;
 }
 
 main .left-block .param {
-    text-decoration: underline;
     margin-bottom: 7px;
+    font-weight: 500;
 }
 
 main .left-block p {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 2px;
+    font-weight: 380;
 }
 
 main .first-choose a {
     text-decoration: none;
-    color: #000;
+    color: #565656;
     transition: 0.3s color;
 }
 
@@ -152,7 +172,7 @@ main .second-choose input[type="checkbox"] {
     margin-right: 7px;
 }
 
-main .second-choose p:not(.param){
+main .second-choose p:not(.param) {
     cursor: pointer;
     transition: 0.3s color;
 }

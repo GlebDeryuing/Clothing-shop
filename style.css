@@ -16,7 +16,7 @@ header {
     margin: 0;
 }
 
-.content {
+header .content {
     width: 80%;
     margin: auto;
     display: flex;
@@ -45,7 +45,7 @@ main {
     margin-left: auto;
 }
 
-.main-menu a {
+.main-menu .menu-link {
     display: block;
     padding: 15px 30px;
     text-decoration: none;
@@ -53,7 +53,7 @@ main {
     transition: background-color 0.3s;
 }
 
-.main-menu a:hover {
+.main-menu .menu-link:hover {
     background-color: #009966;
 }
 
@@ -121,13 +121,13 @@ main .catalog .item-cost-before {
     text-decoration: line-through;
 }
 
-main .left-block {
+main .right-block {
     width: 15%;
     margin-top: 20px;
     position: fixed;
 }
 
-main .left-block input[type="search"] {
+main .right-block input[type="search"] {
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     width: 100%;
@@ -138,17 +138,15 @@ main .left-block input[type="search"] {
     font-weight: 350;
     outline: 0;
     transition: border 0.05s;
-    transition: border-bottom 0.3s;
 }
 
-main .left-block input[type="search"]:focus {
+main .right-block input[type="search"]:focus {
     border-radius: 0;
     border: 1px solid white;
     border-bottom: 1px solid #565656;
-    placeholder:
 }
 
-main .left-block input[type="search"]::-webkit-search-cancel-button {
+main .right-block input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     width: 8px;
     height: 8px;
@@ -161,12 +159,12 @@ main .second-choose {
     color: #565656;
 }
 
-main .left-block .param {
+main .right-block .param {
     margin-bottom: 7px;
     font-weight: 600;
 }
 
-main .left-block p {
+main .right-block p {
     font-size: 16px;
     font-weight: 380;
 }
@@ -206,5 +204,41 @@ main .second-choose p:not(.param):hover {
 footer {
     display: flex;
     background-color: #565656;
-    height: 50px;
+}
+
+footer .content {
+    width: 80%;
+    font-size: 14px;
+    margin: auto;
+}
+
+footer .sm {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+footer .sm-link {
+    display: block;
+    padding: 10px 10px;
+    margin: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+footer .sm-link img {
+    height: 20px;
+}
+
+footer .sm-link:hover {
+    opacity: 0.4;
+}
+
+footer .copyright p {
+    color: #fff;
+    text-align: center;
+    opacity: 0.4;
+    padding: 10px 0 20px 0;
 }

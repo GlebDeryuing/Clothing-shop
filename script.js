@@ -1,5 +1,11 @@
-let right_block = document.getElementsByClassName('left-block')[0];
+let right_block = document.getElementsByClassName('right-block')[0];
 right_block.style.right = document.documentElement.clientWidth * 0.05 + 'px';
+
+window.onresize = function() {
+    right_block.style.right = document.documentElement.clientWidth * 0.05 + 'px';
+};
+
+
 
 let content_header = document.getElementsByClassName('content')[0];
 let main_block = document.getElementsByTagName('main')[0];

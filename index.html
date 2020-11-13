@@ -25,13 +25,9 @@
             </div>
         </div>
     </header>
-    <main>
+    <main v-on:click="hideTooltip">
         <div class="v-main">
             <h2><b>Main page:</b> not found</h2>
-            <div>.</div>
-        </div>
-        <div class="v-cart">
-            <h2><b>Cart:</b> not found</h2>
             <div>.</div>
         </div>
         <div class="v-catalog">
@@ -240,6 +236,16 @@
                 </div>
             </div>
         </div>
+        <div class="v-cart">
+            <h2><b>Cart page:</b> страница недоступна</h2>
+            <h2> Приносим извинения за неудобства. В качестве извинений можете поменять текст ниже кликом на него</p>
+                <div id="main-cg" v-cloak>
+                    <div class="tooltip" v-on:click.stop v-if="show_tooltip">
+                        <input type="text" v-model="text_content" />
+                    </div>
+                    <p v-on:click.stop="toggleTooltip">{{text_content}}</p>
+                </div>
+        </div>
     </main>
     <footer>
         <div class="content">
@@ -285,12 +291,26 @@
                     document.getElementsByClassName('v-main')[0].style.display = 'none';
                     document.getElementsByClassName('v-cart')[0].style.display = 'block';
                 }
-
-                // document.getElementsByClassName('catalog')[0].style.visible = false;
-                // else document.getElementsByClassName('catalog')[0].style.visible = true;
             }
         }
     });
+</script>
+<script>
+    var demo = new Vue({
+        el: '#main-cg',
+        data: {
+            show_tooltip: false,
+            text_content: '"редактируемый текст для извинений"'
+        },
+        methods: {
+            hideTooltip: function() {
+                this.show_tooltip = false;
+            },
+            toggleTooltip: function() {
+                this.show_tooltip = !this.show_tooltip;
+            }
+        }
+    })
 </script>
 
 </html>

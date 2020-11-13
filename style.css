@@ -32,6 +32,7 @@ header .content {
 main {
     width: 80%;
     margin: auto;
+    min-height: calc(100vh - 146px);
 }
 
 .logo {
@@ -267,7 +268,33 @@ footer .copyright p {
     padding: 0 0 20px 0;
 }
 
-.v-main div,
-.v-cart div {
+.v-main div {
     padding-top: 80vh;
+    color: #fff;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.tooltip {
+    width: 700px;
+    position: absolute;
+    top: 200px;
+}
+
+.tooltip input {
+    width: 100%;
+    line-height: 34px;
+    border-radius: 3px;
+    text-align: center;
+    color: #565656;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+#main {
+    height: 300px;
+    position: relative;
+    padding-top: 150px;
 }

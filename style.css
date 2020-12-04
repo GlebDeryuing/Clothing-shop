@@ -41,6 +41,75 @@ main {
     user-select: none;
 }
 
+.v-main .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.v-main .content.list .text {
+    background-color: #00996644;
+}
+
+.v-main .turn-button {
+    display: inline-block;
+    padding: 10px;
+    border: #009966 1px solid;
+    margin-right: 10px 0;
+    cursor: pointer;
+}
+
+.v-main .content .news {
+    width: 48%;
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s box-shadow;
+}
+
+.v-main .content .news:hover {
+    box-shadow: 0 4px 5px lightslategray;
+}
+
+.v-main .content .news {
+    flex-direction: row-reverse;
+}
+
+.v-main .content .news .text {
+    width: 75%;
+    padding: 10px;
+}
+
+.v-main .content .news div:nth-child(2) {
+    width: 25%;
+}
+
+.v-main .content .news img {
+    width: 100%;
+    height: 100%;
+}
+
+.v-main h4 {
+    margin-top: 0;
+    font-weight: 600;
+    color: #565656;
+    font-size: 24px;
+}
+
+.v-main #main input {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    width: 40%;
+    height: 1.5em;
+    border: 0;
+    border-bottom: 1px solid #565656;
+    border-radius: 0;
+    font-weight: 350;
+    outline: 0;
+    transition: border 0.05s;
+    margin-left: 10px;
+}
+
 .main-menu {
     margin-left: auto;
 }
@@ -73,7 +142,7 @@ nav.cart .cart {
 }
 
 main h2 {
-    margin-bottom: 0;
+    margin-bottom: 30px;
     margin-left: 10px;
     margin-top: 20px;
     font-weight: 380;
@@ -268,12 +337,7 @@ footer .copyright p {
     padding: 0 0 20px 0;
 }
 
-.v-main div {
-    padding-top: 80vh;
-    color: #fff;
-}
-
-[v-cloak] {
+#main-cg [v-cloak] {
     display: none;
 }
 
@@ -293,8 +357,100 @@ footer .copyright p {
     padding-right: 5px;
 }
 
-#main {
+#main-nn .serv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#main-nn .serv div {
+    width: 30%;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.15s background-color;
+}
+
+#main-nn .serv div.active {
+    background-color: #00996644;
+}
+
+h2.se {
+    margin-bottom: 5px;
+}
+
+
+/* #main {
     height: 300px;
     position: relative;
     padding-top: 150px;
+} */
+
+.content-about h2 {
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #565656;
+}
+
+#form-about {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#form-about>div {
+    width: 48%;
+}
+
+#form-about input {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    width: 80%;
+    height: 1.5em;
+    border: 0;
+    border-bottom: 1px solid #565656;
+    border-radius: 0;
+    font-weight: 350;
+    outline: 0;
+    margin: auto;
+}
+
+#form-about textarea {
+    width: 700px;
+    height: 200px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    border: 1px solid #565656;
+    border-radius: 0;
+    font-weight: 350;
+    outline: 0;
+    resize: none
+}
+
+#form-about textarea:focus {
+    border: 1px solid #565656
+}
+
+#form-about button {
+    display: block;
+    margin-left: auto;
+    margin-right: 50px;
+    width: 100px;
+    height: 40px;
+    background-color: #565656;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.2s background-color;
+}
+
+#form-about button:hover {
+    background-color: #009966;
+    outline: none;
+}
+
+#form-about .error {
+    display: block;
 }

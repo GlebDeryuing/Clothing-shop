@@ -27,21 +27,73 @@
     </header>
     <main v-on:click="hideTooltip">
         <div class="v-main">
-            <h2><b>Main page:</b> not found</h2>
-            <div>.</div>
+            <h2><b>Main page:</b> News</h2>
+            <form id="main" v-cloak>
+                <div class="bar">
+                    <!-- Создает связь между моделью searchString и текстовым полем -->
+                    <input type="text" v-model="searchString" placeholder="Введите название статьи" />
+                    <a v-bind:class="{ 'active': layout == 'list'}" v-on:click="layout = 'list'" class="turn-button">
+                        Зеленый</a>
+                    <a v-bind:class="{ 'active': layout == 'grid'}" v-on:click="layout = 'grid'" class="turn-button">
+                        Белый</a>
+                </div>
+                <div class="content grid" v-if="layout == 'grid'">
+                    <div class="news news-left" v-for="article in filteredArticles">
+                        <div class="text">
+                            <h4>{{article.title}}</h4>
+                            <p>{{article.text}}</p>
+                        </div>
+                        <div class="img"><img v-bind:src="article.image"></div>
+                    </div>
+                </div>
+
+                <div class="content list" v-if="layout == 'list'">
+                    <div class="news news-left" v-for="article in filteredArticles">
+                        <div class="text">
+                            <h4>{{article.title}}</h4>
+                            <p>{{article.text}}</p>
+                        </div>
+                        <div class="img"><img v-bind:src="article.image"></div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="content-about">
+                <h2>Leave your review!</h2>
+                <form action="" id="form-about">
+                    <div class="left">
+                        <label for="name">Enter your name:</label>
+                        <input type="" id="name" name="name" required>
+                        <label for="surname">Enter your surname:</label>
+                        <input type="" id="surname" name="surname" required>
+                        <label for="choose-number">Enter a rating from 1 to 10</label>
+                        <input type="number" id="choose-number" name="amount" value="1" min="1" max="10" required>
+                        <label for="mail">Enter your email</label>
+                        <input type="" id="mail" name="mail">
+                        <span class="error"></span>
+                    </div>
+                    <div class="right">
+                        <label for="text">Your review:</label>
+                        <textarea type="text"></textarea>
+                        <button onclick="myFunction2()">Send</button>
+                    </div>
+
+                </form>
+            </div>
         </div>
+
         <div class="v-catalog">
             <h2><b>Category:</b> Men's</h2>
             <div class="container">
                 <div class="catalog">
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="1.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed pink hoodie </p>
                             <p class="item-cost">30 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="2.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Green hoodie "Power Angels"</p>
@@ -49,14 +101,14 @@
                             <p class="item-cost-before">70 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="3.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Basic black joggers</p>
                             <p class="item-cost">35 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="4.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed black hoodie</p>
@@ -64,70 +116,70 @@
                             <p class="item-cost-before">70 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="1.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed pink hoodie </p>
                             <p class="item-cost">30 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="2.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Green hoodie "Power Angels"</p>
                             <p class="item-cost">42 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="3.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Basic black joggers</p>
                             <p class="item-cost">35 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="4.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed black hoodie w/ asian guy (long text test)</p>
                             <p class="item-cost">40 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="1.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed pink hoodie </p>
                             <p class="item-cost">30 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="2.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Green hoodie "Power Angels"</p>
                             <p class="item-cost">42 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="3.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Basic black joggers</p>
                             <p class="item-cost">35 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="4.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed black hoodie</p>
                             <p class="item-cost">40 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="1.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed pink hoodie </p>
                             <p class="item-cost">30 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="2.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Green hoodie "Power Angels"</p>
@@ -135,14 +187,14 @@
                             <p class="item-cost-before">70 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="3.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Basic black joggers</p>
                             <p class="item-cost">35 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="4.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed black hoodie</p>
@@ -150,56 +202,56 @@
                             <p class="item-cost-before">70 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="1.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed pink hoodie </p>
                             <p class="item-cost">30 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="2.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Green hoodie "Power Angels"</p>
                             <p class="item-cost">42 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="3.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Basic black joggers</p>
                             <p class="item-cost">35 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="4.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed black hoodie w/ asian guy (long text test)</p>
                             <p class="item-cost">40 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="1.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed pink hoodie </p>
                             <p class="item-cost">30 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="2.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Green hoodie "Power Angels"</p>
                             <p class="item-cost">42 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="3.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Basic black joggers</p>
                             <p class="item-cost">35 USD</p>
                         </div>
                     </a>
-                    <a href="#" class="item">
+                    <a href="index-2.html" class="item">
                         <img src="4.jfif" alt="">
                         <div class="item-text">
                             <p class="item-name">Printed black hoodie</p>
@@ -238,13 +290,29 @@
         </div>
         <div class="v-cart">
             <h2><b>Cart page:</b> страница недоступна</h2>
-            <h2> Приносим извинения за неудобства. В качестве извинений можете поменять текст ниже кликом на него</p>
-                <div id="main-cg" v-cloak>
-                    <div class="tooltip" v-on:click.stop v-if="show_tooltip">
-                        <input type="text" v-model="text_content" />
-                    </div>
-                    <p v-on:click.stop="toggleTooltip">{{text_content}}</p>
+            <p> Приносим извинения за неудобства. В качестве извинений можете поменять текст ниже кликом на него</p>
+            <div id="main-cg" v-cloak>
+                <div class="tooltip" v-on:click.stop v-if="show_tooltip">
+                    <input type="text" v-model="text_content" />
                 </div>
+                <p v-on:click.stop="toggleTooltip">{{text_content}}</p>
+            </div>
+
+            <form id="main-nn" v-cloak>
+                <h2 class="se"><b>Услуги</b></h2>
+                <div class="serv">
+                    <!-- Цикл проходит по массиву услуг, присваивает обработчик для клика, и устанавливает или удаляет класс "active" -->
+                    <div v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active': service.active}">
+                        <!-- Показывает название и цену для каждого вложенного элемента. Vue имеет встроенный фильтр валют для формирования цены -->
+                        {{service.name}} <span>{{service.price | currency}}</span>
+                    </div>
+                </div>
+                <div class="total">
+                    <!-- Высчитывает итоговую сумму -->
+                    Итого: <span>{{total() | currency}}</span>
+                </div>
+            </form>
+
         </div>
     </main>
     <footer>
@@ -311,6 +379,150 @@
             }
         }
     })
+</script>
+
+<script>
+    var demo = new Vue({
+        el: '#main',
+        data: {
+            searchString: "",
+            layout: 'grid',
+
+            articles: [{
+                "title": "Новое поступление!",
+                "url": "https://site.com",
+                "image": "news1.jpg",
+                "text": "Встречайте в нашем магазине новику! Шикарные туфли, которые Вам придатут блеска и уверенности в себе. К тому же, еще и по скидке!"
+            }, {
+                "title": "Новый пошив!",
+                "url": "https://site.com",
+                "image": "news1.jpg",
+                "text": "Встречайте в нашем магазине новику! Шикарные туфли, которые Вам придатут блеска и уверенности в себе. К тому же, еще и по скидке!"
+            }, {
+                "title": "Изменение в товаре!",
+                "url": "https://site.com",
+                "image": "news2.jpg",
+                "text": "Встречайте в нашем магазине новику! Шикарные туфли, которые Вам придатут блеска и уверенности в себе. К тому же, еще и по скидке!"
+            }, {
+                "title": "Скидки!",
+                "url": "https://site.com",
+                "image": "news2.jpg",
+                "text": "Встречайте в нашем магазине новику! Шикарные туфли, которые Вам придатут блеска и уверенности в себе. К тому же, еще и по скидке!"
+            }, {
+                "title": "Скидки!",
+                "url": "https://site.com",
+                "image": "news3.jpg",
+                "text": "Встречайте в нашем магазине новику! Шикарные туфли, которые Вам придатут блеска и уверенности в себе. К тому же, еще и по скидке!"
+            }, {
+                "title": "Новое поступление!",
+                "url": "https://site.com",
+                "image": "news3.jpg",
+                "text": "Встречайте в нашем магазине новику! Шикарные туфли, которые Вам придатут блеска и уверенности в себе. К тому же, еще и по скидке!"
+            }]
+        },
+        computed: {
+            // Вычисленное свойство, которое содержит только те статьи, которые соответствуют searchString
+            filteredArticles: function() {
+                var articles_array = this.articles,
+                    searchString = this.searchString;
+                if (!searchString) {
+                    return articles_array;
+                }
+                searchString = searchString.trim().toLowerCase();
+                articles_array = articles_array.filter(function(item) {
+                        if (item.title.toLowerCase().indexOf(searchString) !== -1) {
+                            return item;
+                        }
+                    })
+                    // вернуть массив с отфильтрованными данными
+                return articles_array;;
+            }
+        }
+    });
+</script>
+<script>
+    // Определяем собственный фильтр валют "currency"
+    Vue.filter('currency', function(value) {
+        return value.toFixed(2) + ' р.';
+    });
+
+    var demo = new Vue({
+        el: '#main-nn',
+        data: {
+            // Определяем свойства модели; представление будет проходить циклом по массиву услуг и генерировать элементы списка для каждого вложенного пункта.
+            services: [{
+                name: 'Доставка',
+                price: 600,
+                active: true
+            }, {
+                name: 'Защита покупателя',
+                price: 500,
+                active: false
+            }, {
+                name: 'Дополнительная гарантия',
+                price: 1000,
+                active: false
+            }, {
+                name: 'Фирменный значек',
+                price: 300,
+                active: false
+            }]
+        },
+        methods: {
+            toggleActive: function(s) {
+                s.active = !s.active;
+            },
+            total: function() {
+                var total = 0;
+                this.services.forEach(function(s) {
+                    if (s.active) {
+                        total += s.price;
+                    }
+                });
+                return total;
+            }
+        }
+    });
+
+    function myFunction2() {
+
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        //Получаем форму, поле электронной почты, а также  span, в который мы поместим сообщение об ошибке.
+
+        var form = document.getElementById('form-about');
+        var email = document.getElementById('mail');
+        var error = document.querySelector('.error');
+
+        email.addEventListener("input", function(event) {
+            // Каждый раз, когда пользователь вводит что-либо, проверяем, является ли корректным поле электронной почты.
+            if (!validateEmail(email.value)) {
+                error.innerHTML = "Email не соответсвует формату. Мы оповестим Вас, когда все будет в норме.";
+                error.style.color = "red";
+            } else {
+                error.innerHTML = "Email соответсвует формату.";
+                error.style.color = "black";
+            }
+        }, false);
+        form.addEventListener("submit", function(event) {
+            // Каждый раз, когда пользователь пытается отправить данные, мы проверяем валидность поля электронной почты.
+            if (!validateEmail(email.value)) {
+                // Если поле невалидно, отображается  сообщение об ошибке.
+                error.innerHTML = "Email не соответсвует формату. Мы оповестим Вас, когда все будет в норме.";
+                // отменяет событие отправки данных с формы
+                event.preventDefault();
+                // останавливает цепочку вызова событий для следующих слушателей
+                event.stopImmediatePropagation();
+                // проверим, вызвано ли событие preventDefault
+                if (!event.isDefaultPrevented()) {
+                    // предотвратим действие по умолчанию (событие отправки с формы)
+                    event.returnValue = false;
+                }
+            }
+        }, false);
+    };
 </script>
 
 </html>

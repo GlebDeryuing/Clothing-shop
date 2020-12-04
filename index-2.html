@@ -1,0 +1,82 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Параллакс</title>
+    <link rel="stylesheet" href="style-parallax.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="parallax wall" id="wall"></div>
+    <div class="parallax floor" id="floor"></div>
+    <div class="parallax girl" id="girl"></div>
+    <div class="parallax green" id="green"></div>
+    <div class="parallax gray" id="gray"></div>
+
+
+
+    <div class="container">
+        <p class="header">Ошибка наличия</p>
+        <p class="subheader">Видимо, эта вещь закончилась. Посмотрим другое?</p>
+    </div>
+
+    <header id="head">
+        <div class="content">
+            <img src="logo.png" alt="" class="logo">
+            <div class="main-menu">
+
+                <a href="index.html" class="l-main">« Back</a>
+
+            </div>
+        </div>
+    </header>
+
+
+    <script>
+        //Получаем элементы фона: облака, горы далеко, горы близко, лес далеко, лес близко
+
+        const bgFloor = document.getElementById("floor");
+        const bgGirl = document.getElementById("girl");
+        const bgGreen = document.getElementById("green");
+        const bgGray = document.getElementById("gray");
+        const bgWall = document.getElementById("wall");
+
+        //При движении мышью вызываем функцию, которая меняет положение фона
+        document.addEventListener("mousemove", function(e) {
+            MoveBackground(e);
+        });
+
+        function MoveBackground(e) {
+            //Рассчитываем, насколько далеко от начала оси находится курсор (0.5 - середина экрана, 1 - ширина экрана). Затем умножаем получившееся число на число, 		на которое будет сдвигаться фон (например, 50). То есть, если курсор находится посередине страницы (0.5), то при умножении получится 25. Далее отнимаем 		половину от 50, чтобы фон мог двигаться как влево, так и вправо
+
+            let offsetX0 = (e.clientX / window.innerWidth * 10) - 10; //рассчитываем координаты дальних гор
+            let offsetY0 = (e.clientY / window.innerHeight * 5) - 5;
+
+            let offsetX1 = (e.clientX / window.innerWidth * 30) - 15; //рассчитываем координаты дальних гор
+            let offsetY1 = (e.clientY / window.innerHeight * 10) - 5;
+
+            let offsetX2 = (e.clientX / window.innerWidth * 40) - 20; //координаты ближних гор
+            let offsetY2 = (e.clientY / window.innerHeight * 20) - 10;
+
+            let offsetX3 = (e.clientX / window.innerWidth * 70) - 35; //координаты дальнего леса
+            let offsetY3 = (e.clientY / window.innerHeight * 40) - 20;
+
+            let offsetX4 = (e.clientX / window.innerWidth * 250) - 60; //координаты ближнего леса
+            let offsetY4 = (e.clientY / window.innerHeight * 50) - 25;
+
+            //Меняем положение фона    
+            bgWall.setAttribute("style", "background-position: " + offsetX0 + "px " + offsetY0 + "px;");
+            bgFloor.setAttribute("style", "background-position: " + offsetX1 + "px " + offsetY1 + "px;");
+            bgGirl.setAttribute("style", "background-position: " + offsetX2 + "px " + offsetY2 + "px;");
+            bgGreen.setAttribute("style", "background-position: " + offsetX3 + "px " + offsetY3 + "px;");
+            bgGray.setAttribute("style", "background-position: " + offsetX4 + "px " + offsetY4 + "px;");
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+.parallax {
+    position: fixed;
+    top: 0;
+    left: -60px;
+    right: 60px;
+    width: 110%;
+    height: 110%;
+    background-size: cover !important;
+}
+
+.sky {
+    background: no-repeat url(images/sky.png);
+    background-size: 100%;
+    z-index: 1;
+}
+
+.wall {
+    background: no-repeat url(images/wall.png);
+    background-size: 105%;
+    z-index: 2;
+    -webkit-transition: background-position 0.5s linear;
+    -moz-transition: background-position 0.5s linear;
+    -o-transition: background-position 0.5s linear;
+    transition: background-position 0.5s linear;
+}
+
+.floor {
+    background: no-repeat url(images/floor.png);
+    background-size: 105%;
+    margin-top: -40px;
+    z-index: 3;
+    -webkit-transition: background-position 0.5s linear;
+    -moz-transition: background-position 0.5s linear;
+    -o-transition: background-position 0.5s linear;
+    transition: background-position 0.5s linear;
+}
+
+.girl {
+    background: no-repeat url(images/girl.png);
+    background-size: 105%;
+    margin-top: -40px;
+    z-index: 4;
+    -webkit-transition: background-position 0.5s linear;
+    -moz-transition: background-position 0.5s linear;
+    -o-transition: background-position 0.5s linear;
+    transition: background-position 0.5s linear;
+}
+
+.green {
+    background: no-repeat url(images/green.png);
+    background-size: 105%;
+    margin-top: -40px;
+    z-index: 5;
+    -webkit-transition: background-position 0.5s linear;
+    -moz-transition: background-position 0.5s linear;
+    -o-transition: background-position 0.5s linear;
+    transition: background-position 0.5s linear;
+}
+
+.gray {
+    background: no-repeat url(images/gray.png);
+    background-size: 105%;
+    margin-top: -40px;
+    z-index: 6;
+    -webkit-transition: background-position 0.5s linear;
+    -moz-transition: background-position 0.5s linear;
+    -o-transition: background-position 0.5s linear;
+    transition: background-position 0.5s linear;
+}
+
+.container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    z-index: 7;
+}
+
+.header {
+    font-size: 72pt;
+    color: white;
+    text-shadow: #565656 5px 0 5px;
+}
+
+.subheader {
+    font-size: 20pt;
+    margin-left: -20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: #565656 5px 0 5px;
+}
+
+#head {
+    display: block;
+    position: absolute;
+    z-index: 8;
+    width: 100vw;
+}
